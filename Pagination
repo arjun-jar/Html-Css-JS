@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,300&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+  <style>
+
+    *{
+
+    padding: 0;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    font-family: "Poppins",sans-serif;
+
+    font-weight: 300;
+
+}
+
+.container{
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    display: flex;
+
+}
+
+.card-content{
+
+  display: flex;  
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+}
+
+.card{
+
+    position: relative;
+
+    background:#fff;
+
+    max-width: 325px;
+
+    width: 325px;
+
+    height: auto;
+
+    margin: 25px;
+
+    box-shadow: 0 5px 20px rgb(1 1 1/20%);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+.card-img{
+
+    max-width: 100%;
+
+    height: auto;
+
+}
+
+.card-info{
+
+    position: relative;
+
+    color: #222;
+
+    padding: 10px 20px 20px;
+
+}
+
+.card-infp p{
+
+    font-size: 1rem;
+
+    padding: 25px;
+
+}
+
+.pagination{
+
+    text-align: center;
+
+    margin: 30px 30px 60px;
+
+    user-select: none; 
+
+}
+
+.pagination li{
+
+    text-decoration: none ;
+
+    font-size: 1rem;
+
+    display: inline-block;
+
+    line-height: 25px;
+
+    margin: 5px;
+
+    box-shadow: 0 5px 25px rgb(1,1,1/10%);
+
+}
+
+ 
+
+.next-page ,.previous-page{
+
+background: rgb(8, 207, 214);
+
+ width: 60px;
+
+border-radius: 100px;
+
+transition: 0.3s ease;
+
+}
+
+.previous-page:hover{
+
+    transform: translateX(-5px);
+
+}
+
+.next-page:hover{
+
+    transform: translateX(5px);
+
+}
+
+.current-page ,.dots{
+
+background: #ccc;
+
+width: 35px;
+
+border-radius: 100px;
+
+cursor: pointer;
+
+}
+
+ .active{
+
+    background: rgb(8, 207, 214);
+
+ }
+
+ .disable{
+
+    background-color: #ccc;
+
+ }
+
+ a{
+
+    text-decoration: none;
+
+ }
+
+ a:active{
+
+    color: inherit;
+
+ }
+
+  </style>
+
+   <title>Document</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card-content" style="display: none;">
+
+        <div class="card">
+
+            <div class="card-img">  <img src="" alt=""> image-1</div>
+
+            <div class="card-info">
+
+                <h3>card - 01</h3>  
+
+                <p>This is card information</p>
+
+            </div>    
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-img">  <img src="" alt=""> image-2</div>
+
+            <div class="card-info">
+
+                <h3>card - 02</h3>  
+
+                <p>This is card information</p>
+
+            </div>    
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-img">  <img src="" alt=""> image-3</div>
+
+            <div class="card-info">
+
+                <h3>card - 03</h3>  
+
+                <p>This is card information</p>
+
+            </div>    
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-img">  <img src="" alt=""> image-4</div>
+
+            <div class="card-info">
+
+                <h3>card - 04</h3>  
+
+                <p>This is card information</p>
+
+            </div>    
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-img">  <img src="" alt=""> image-5</div>
+
+            <div class="card-info">
+
+                <h3>card - 05</h3> 
+
+                <p>This is card information</p>
+
+            </div>    
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-img">  <img src="" alt=""> image-6</div>
+
+            <div class="card-info">
+
+                <h3>card - 06</h3>  
+
+                <p>This is card information</p>
+
+            </div>    
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-img">  <img src="" alt=""> image-7</div>
+
+            <div class="card-info">
+
+                <h3>card - 07</h3>  
+
+                <p>This is card information</p>
+
+            </div>    
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-img">  <img src="" alt=""> image-8</div>
+
+            <div class="card-info">
+
+                <h3>card - 08</h3>  
+
+                <p>This is card information</p>
+
+            </div>    
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-img">  <img src="" alt=""> image-9</div>
+
+            <div class="card-info">
+
+                <h3>card - 09</h3>  
+
+                <p>This is card information</p>
+
+            </div>    
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-img">  <img src="" alt=""> image-10</div>
+
+            <div class="card-info">
+
+                <h3>card - 10</h3>  
+
+                <p>This is card information</p>
+
+            </div>    
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-img">  <img src="" alt=""> image-11</div>
+
+            <div class="card-info">
+
+                <h3>card - 11</h3>  
+
+                <p>This is card information</p>
+
+            </div>    
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-img">  <img src="" alt=""> image-12</div>
+
+            <div class="card-info">
+
+                <h3>card - 12</h3>  
+
+                <p>This is card information</p>
+
+            </div>    
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-img">  <img src="" alt=""> image-13</div>
+
+            <div class="card-info">
+
+                <h3>card - 13</h3>  
+
+                <p>This is card information</p>
+
+            </div>    
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-img">  <img src="" alt=""> image-14</div>
+
+            <div class="card-info">
+
+                <h3>card - 14</h3>  
+
+                <p>This is card information</p>
+
+            </div>    
+
+        </div>
+
+       
+
+        </div>
+
+        <!--card content end -->
+
+<div class="pagination">
+
+    <!-- <li class="page-item previous-page disable"><a href="#" class="page-link"></a>Prev</li>
+
+    <li class="page-item current-page active"><a href="#" class="page-link"></a>1</li>
+
+    <li class="page-item dots "><a href="#" class="page-link"></a>...</li>
+
+    <li class="page-item current-page"><a href="#" class="page-link"></a>5</li>
+
+    <li class="page-item current-page"><a href="#" class="page-link"></a>6</li>
+
+    <li class="page-item dots"><a href="#" class="page-link"></a>...</li>
+
+    <li class="page-item current-page"><a href="#" class="page-link"></a>10</li>
+
+  <li class="page-item next-page"><a href="#" class="page-link"></a>Next</li> -->
+
+</div>
+
+    </div>
+
+    <!-- container end -->
+
+    <script>
+
+        function getPageList(totalPages, page, maxLength) {
+
+  function range(start, end) {
+
+    return Array.from(Array(end - start + 1), (_, i) => i + start);
+
+  }
+
+  var sideWidth = maxLength < 9 ? 1 : 2;
+
+  var leftWidth = (maxLength - sideWidth * 2 - 3) >> 1;
+
+  var rightWidth = (maxLength - sideWidth * 2 - 3) >> 1;
+
+  if (totalPages <= maxLength) {
+
+    return range(1, totalPages);
+
+  }
+
+  if (page <= maxLength - sideWidth - 1 - rightWidth) {
+
+    return range(1, maxLength - sideWidth - 1).concat(0,
+
+      range(totalPages - sideWidth + 1, totalPages) );
+
+  }
+
+  if (page >= totalPages - sideWidth - 1 - rightWidth) {
+
+    return range(1, sideWidth).concat(0,
+
+      range(totalPages - sideWidth - 1 - rightWidth - leftWidth, totalPages)
+
+    );
+
+  }
+
+  return range(1, sideWidth).concat(
+
+    0,
+
+    range(page - leftWidth, page + rightWidth),
+
+    0,
+
+    range(totalPages - sideWidth + 1, totalPages)
+
+  );
+
+}
+
+$(function(){
+
+    var numberOfItems=$(".card-content .card").length;
+
+    var limitPerPages=1 //how many card visible per a page
+
+    var totalPages=Math.ceil(numberOfItems / limitPerPages);
+
+    var paginationSize=5;
+
+    var currentPage;
+
+    function showPage(whichPage){
+
+        if(whichPage < 1 || whichPage > totalPages )return false
+
+        currentPage=whichPage
+
+        $(".card-content .card").hide().slice((currentPage-1) * limitPerPages ,currentPage * limitPerPages).show()
+
+   
+
+   $(".pagination li").slice(1,-1).remove()
+
+   getPageList(totalPages,currentPage,paginationSize).forEach(function(item){
+
+   $("<li>")
+
+        .addClass("page-item")
+
+        .addClass(item?"current-page":"dots")
+
+        .toggleClass("active",item===currentPage)
+
+        .append($("<a>")
+
+        .addClass("page-link")
+
+        .attr({href:"#"}).text(item||"..."))
+
+        .insertBefore(".next-page")
+
+   });
+
+   $(".previous-page").toggleClass("disable",currentPage===1);
+
+   $(".next-page").toggleClass("disable",currentPage===totalPages);
+
+return true;
+
+    }
+
+    $(".pagination").append(
+
+        $("<li>").addClass("page-item")
+
+            .addClass("previous-page")
+
+            .append($("<a>")
+
+            .addClass("page-link")
+
+            .attr({href:"#"})
+
+            .text("Prev")),
+
+            $("<li>").addClass("page-item")
+
+            .addClass("next-page")
+
+            .append($("<a>")
+
+            .addClass("page-link")
+
+            .attr({href:"#"})
+
+            .text("Next"))
+
+    )
+
+    $(".card-content").show()
+
+    showPage(1)
+
+    $(document).on("click",".pagination li.current-page:not(.active)",function(){
+
+        return showPage(+$(this).text())
+
+    })
+
+$(".next-page").on("click",function(){
+
+    return showPage(currentPage + 1)
+
+})
+
+$(".previous-page").on("click",function(){
+
+    return showPage(currentPage - 1)
+
+})
+
+});
+
+    </script>
+
+</body>
+
+</html>
